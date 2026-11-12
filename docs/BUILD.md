@@ -26,15 +26,9 @@ arduino-cli lib install "M5GFX@0.2.23"
 
 The PowerShell script uses `arduino-cli` from `PATH`. Use `-Cli`, `-Config`, or `-EspUsbHostDir` if your installation is elsewhere. Build output goes to `.build/` and does not overwrite the supplied firmware image.
 
-The GitHub Actions checks also compile the demo and the independent `ColorCycle` example with these pinned dependencies. From a **complete repository checkout or the firmware ZIP**, which include both the supplied binaries and `tools/verify_build_match.py`, compare a freshly built demo with the supplied application:
+GitHub Actions compiles the demo and the independent `ColorCycle` example with these pinned dependencies. It also runs native C++ tests and verifies the supplied firmware hashes and image layout.
 
-```powershell
-python tools/verify_build_match.py .build/arduino-output/CardputerADV_WeActDemo.ino.bin
-```
-
-The comparison excludes the ESP-IDF application descriptor's 32-byte ELF SHA-256 and the final image checksum and SHA-256 footer, which can change between equivalent builds. All other bytes must match. The distributed executable was built with the Windows toolchain; Linux builds are checked for compilation but can differ at the binary level. `firmware/manifest.json` ties the release ID to the shipped application hash and records a SHA-256 of the demo, library and build-script inputs.
-
-The **demo-source ZIP** is intended for rebuilding and native tests. It does not contain the prebuilt firmware or its verification scripts, so this comparison command applies only to the complete repository or firmware package.
+The `firmware/manifest.json` file records the hashes of the distributed binaries and a separate revision hash for the build inputs. Rebuilding creates a new image; its bytes can differ because the toolchain embeds source paths and compilation timestamps. The **demo-source ZIP** contains the project source and native tests, while the **firmware ZIP** also includes the prebuilt image and its integrity checks.
 
 The board profile is `esp32:esp32:m5stack_cardputer` with `USBMode=hwcdc`, `CDCOnBoot=cdc`, `FlashSize=8M`, `PartitionScheme=custom`, and `PSRAM=disabled`. The custom `partitions.csv` is beside the sketch.
 

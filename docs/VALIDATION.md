@@ -16,10 +16,10 @@ The firmware package targets the M5Stack Cardputer ADV (ESP32-S3, 8 MiB flash) a
 | Driver protocol | Native C++ tests for command encoding, four orientations, bounds, and transport behavior |
 | Demo logic | Native C++ tests for menu actions, frame layout, recovery, telemetry effects, and portrait-vs-landscape pixel proportions (quarter-turn comparison) |
 | Arduino build | Current demo and standalone `ColorCycle` example compiled using Arduino-ESP32 3.3.2 and EspUsbHost 2.10.1 |
-| Binary/source correspondence | A Windows demo rebuild matched the shipped application's executable bytes when the ESP-IDF ELF hash and image footer metadata were excluded; checked by `tools/verify_build_match.py`. |
+| Rebuild consistency | The source revision and distributed firmware hashes are recorded separately. Builds on different machines can embed different source paths and compilation timestamps, so identical binary bytes are not claimed. |
 | Modified LGPL core rebuild | On 2026-11-12, a clean build of the demo with a modified `esp32-hal-misc.c` from an isolated Arduino-ESP32 3.3.2 copy completed; compiler marker and linker map confirm that the modified core was compiled and linked |
 
-The checks can be run with `python tools/run_native_tests.py` and `python tools/verify_release.py`. After compiling the sketch on Windows, use `python tools/verify_build_match.py .build/arduino-output/CardputerADV_WeActDemo.ino.bin` to compare the rebuilt executable with the packaged application. The packaged factory image remains separate from freshly compiled output. CI compiles both Arduino sketches on Linux and checks the firmware build against the supplied application on Windows.
+The checks can be run with `python tools/run_native_tests.py` and `python tools/verify_release.py`. CI compiles the Cardputer demo and independent `ColorCycle` example, runs the native tests, and verifies the supplied firmware and ZIP packages. The packaged factory image remains separate from freshly compiled output.
 
 ## Hardware test scope
 

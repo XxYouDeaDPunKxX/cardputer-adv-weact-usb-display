@@ -141,7 +141,7 @@ def main() -> None:
     firmware_members = paths_as_members(
         firmware_files + firmware_docs + library_files + demo_files
         + [ROOT / "tools" / name for name in (
-            "build-demo.ps1", "verify_release.py", "verify_build_match.py"
+            "build-demo.ps1", "verify_release.py"
         )]
     ) + [
         (ROOT / "firmware" / "README.md", "README.md"),

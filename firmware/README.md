@@ -14,7 +14,7 @@ The factory image includes telemetry-driven animation and the portrait proportio
 
 `firmware/manifest.json` records the release version (`0.1.0`), SHA-256 checksums, and build identity. Its `build_id` uses the first 12 hexadecimal digits of the application's SHA-256. `source_revision_sha256` identifies the demo, display-library, and build-script inputs independently of Git history.
 
-Run `python tools/verify_release.py` after extraction to check the image layout, four firmware hashes, blank NVS, and Arduino source snapshot. `tools/verify_build_match.py` compares a fresh application build with the supplied one, allowing only ESP-IDF ELF-hash metadata and final checksum/hash differences.
+Run `python tools/verify_release.py` after extraction to check the image layout, four firmware hashes, blank NVS, and Arduino source snapshot. Rebuilding the sketch produces a new executable; the manifest identifies the supplied image independently of a local rebuild.
 
 ## 📦 Source and licenses
 
