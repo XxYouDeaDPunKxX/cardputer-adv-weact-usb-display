@@ -10,7 +10,7 @@ Read `docs/HARDWARE.md` to confirm the target, then follow `docs/FLASH.md` for f
 
 ## Firmware identity and checks
 
-The factory image includes telemetry-driven animation and the portrait proportion correction. The demo has been reported working on a Cardputer ADV, but that test was not tied to a readback of this exact image SHA-256. Documented hardware acceptance is still pending; see `docs/VALIDATION.md`.
+The factory image includes telemetry-driven animation and the portrait proportion correction. The demo has been flashed and tested on a Cardputer ADV with the WeAct panel. See `docs/VALIDATION.md` for the validation record.
 
 `firmware/manifest.json` records the release version (`0.1.0`), SHA-256 checksums, and build identity. Its `build_id` uses the first 12 hexadecimal digits of the application's SHA-256. `source_revision_sha256` identifies the demo, display-library, and build-script inputs independently of Git history.
 

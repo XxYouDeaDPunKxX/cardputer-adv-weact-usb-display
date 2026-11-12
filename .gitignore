@@ -12,4 +12,26 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Local configuration and credentials.
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa*
+id_ed25519*
+credentials.json
+secrets.json
+
+# Temporary backups and diagnostics.
+*.bak
+*.backup
+*.log
+*.dmp
+*.core
+*.sqlite
+*.sqlite3
+
 # Keep the verified factory image under firmware/ tracked.

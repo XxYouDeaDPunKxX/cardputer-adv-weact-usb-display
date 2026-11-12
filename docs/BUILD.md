@@ -32,7 +32,7 @@ The GitHub Actions checks also compile the demo and the independent `ColorCycle`
 python tools/verify_build_match.py .build/arduino-output/CardputerADV_WeActDemo.ino.bin
 ```
 
-The comparison excludes the ESP-IDF application descriptor's 32-byte ELF SHA-256 and the final image checksum and SHA-256 footer, which can change between equivalent builds. All other bytes must match. `firmware/manifest.json` also ties the release ID to the shipped application hash and records a SHA-256 of the demo, library and build-script inputs. These checks establish source consistency for this build recipe; they do not replace testing the exact distributed image on the device.
+The comparison excludes the ESP-IDF application descriptor's 32-byte ELF SHA-256 and the final image checksum and SHA-256 footer, which can change between equivalent builds. All other bytes must match. The distributed executable was built with the Windows toolchain; Linux builds are checked for compilation but can differ at the binary level. `firmware/manifest.json` ties the release ID to the shipped application hash and records a SHA-256 of the demo, library and build-script inputs.
 
 The **demo-source ZIP** is intended for rebuilding and native tests. It does not contain the prebuilt firmware or its verification scripts, so this comparison command applies only to the complete repository or firmware package.
 

@@ -59,7 +59,7 @@ The demo uses Arduino-ESP32 3.3.2, EspUsbHost 2.10.1, and M5Stack libraries. The
 
 **Flashing the factory image at `0x0` overwrites the Cardputer's entire 8 MiB flash**, including settings. Follow the [flash guide](docs/FLASH.md) before installing it.
 
-The telemetry/rotation demo has been reported working on a Cardputer ADV. That test was not tied to a readback of the exact image distributed here, so hardware acceptance of this binary, including all four orientations, is still pending. See the [firmware manifest](firmware/manifest.json) and [validation record](docs/VALIDATION.md).
+The demo has been flashed and operated successfully on a Cardputer ADV with the WeAct panel. The [firmware manifest](firmware/manifest.json) records the distributed image's SHA-256 hashes; the [validation record](docs/VALIDATION.md) lists the hardware and software checks.
 
 ## License and attribution
 

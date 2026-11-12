@@ -23,7 +23,10 @@ def compare_binaries(compiled: Path) -> None:
     check_image(reference, "shipped app")
     check_image(rebuilt, "compiled app")
     if len(reference) != len(rebuilt):
-        raise ValueError("compiled application size differs from shipped image")
+        raise ValueError(
+            f"compiled application size differs from shipped image: "
+            f"built {len(rebuilt)} bytes, shipped {len(reference)} bytes"
+        )
 
     # ESP-IDF app descriptor's app_elf_sha256 is at 0xB0..0xCF.
     # The final 33 bytes are the ESP image checksum and appended SHA-256.
