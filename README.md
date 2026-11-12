@@ -61,6 +61,14 @@ The demo uses Arduino-ESP32 3.3.2, EspUsbHost 2.10.1, and M5Stack libraries. The
 
 The demo has been flashed and operated successfully on a Cardputer ADV with the WeAct panel. The [firmware manifest](firmware/manifest.json) records the distributed image's SHA-256 hashes; the [validation record](docs/VALIDATION.md) lists the hardware and software checks.
 
+## 🤖 AI-assisted development
+
+This project was developed with AI assistance.
+
+The project, documentation, and repository materials were shaped through human-directed work supported by AI tools during drafting, structuring, review, and refinement.
+
+AI assistance does not make the project automatically correct, complete, or suitable for every use case. Read it, test it, and adapt it to your own context.
+
 ## License and attribution
 
 This independent project is unaffiliated with M5Stack or WeAct Studio. Its original source and documentation use the [MIT license](LICENSE). The prebuilt firmware also contains separately licensed components, including LGPL-covered Arduino-ESP32 code.
