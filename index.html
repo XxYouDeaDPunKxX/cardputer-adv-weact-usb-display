@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1215">
+  <meta name="description" content="Control a WeAct Display FS V1 0.96-inch USB-C screen from a Cardputer ADV. Explore the C++ library, Arduino demo, hardware details, and firmware guide.">
+  <meta name="robots" content="index, follow">
+  <title>Cardputer ADV + WeAct USB Display — Library, Demo &amp; Firmware</title>
+  <link rel="canonical" href="https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/">
+  <link rel="alternate" type="text/plain" href="llms.txt" title="LLM-readable project index">
+  <link rel="alternate" type="application/json" href="raw-manifest.json" title="Machine-readable project manifest">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" href="media/cardputer-weact-setup.jpg" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cardputer ADV + WeAct USB Display">
+  <meta property="og:description" content="A real hardware project: USB display library, Cardputer ADV demo, and firmware for the WeAct FS V1 0.96-inch panel.">
+  <meta property="og:url" content="https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/">
+  <meta property="og:image" content="https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/media/cardputer-weact-setup.jpg">
+  <meta property="og:image:alt" content="Cardputer ADV connected to a WeAct USB display">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "Cardputer ADV + WeAct USB Display",
+    "description": "C++ library, Arduino demo, and firmware for controlling a WeAct Display FS V1 0.96-inch USB display from an M5Stack Cardputer ADV.",
+    "url": "https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/",
+    "mainEntityOfPage": "https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/",
+    "codeRepository": "https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display",
+    "license": "https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/LICENSE",
+    "programmingLanguage": ["C++", "Arduino"],
+    "runtimePlatform": "M5Stack Cardputer ADV (ESP32-S3)",
+    "applicationCategory": "Embedded software",
+    "version": "0.1.0",
+    "isAccessibleForFree": true,
+    "author": {"@type": "Person", "name": "XxYouDeaDPunKxX"},
+    "about": ["WeAct Display FS V1 0.96-inch", "USB CDC", "RGB565", "ESP32-S3"]
+  }
+  </script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M5 19 19 5M7 5h12v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Cardputer ADV and WeAct USB Display, back to top">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="brand-name">Cardputer ADV <span>× WeAct</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#choose">Start here</a><a href="#demo">Demo</a><a href="#hardware">Hardware</a><a href="#docs">Docs</a>
+      </nav>
+      <a class="header-repo" href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display">GitHub <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Cardputer ADV <span>+ WeAct USB Display.</span></h1>
+        <p class="hero-lead">Drive a <strong>0.96-inch USB-C screen</strong> from the Cardputer ADV. Rotate it, dim it, draw in RGB565, and run a fluid animation that responds to motion.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/tree/main/library/WeActUSBDisplay">Explore the C++ library <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+          <a class="button button-quiet" href="#demo">See it in action <svg class="icon" aria-hidden="true"><use href="#arrow-right"></use></svg></a>
+        </div>
+        <p class="hero-facts">160 × 80 pixels <span>/</span> USB CDC <span>/</span> Four orientations <span>/</span> Open source</p>
+      </div>
+      <figure class="hero-figure">
+        <div class="photo-frame"><img src="media/cardputer-weact-setup.jpg" width="1440" height="1080" alt="White Cardputer ADV connected via USB-C to a small WeAct display glowing blue" fetchpriority="high"></div>
+        <figcaption><span class="caption-indicator" aria-hidden="true"></span>Tested hardware pairing <span class="caption-detail">Cardputer ADV / WeAct FS V1</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="section choose-section wrap" id="choose" aria-labelledby="choose-title">
+      <div class="section-intro">
+        <h2 id="choose-title">Three ways into the project.</h2>
+        <p>Start with the part you need. The source, demo, and prebuilt image have separate entry points.</p>
+      </div>
+      <div class="route-list">
+        <article class="route">
+          <p class="route-type">Build / Reuse</p>
+          <div class="route-main"><h3>Use the display library.</h3><p>Take the C++ driver into your own sketch. Orientation, brightness, screen power, pixel data and rectangular drawing are documented in the API.</p></div>
+          <a class="route-link" href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/LIBRARY_API.md">Library API <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+        </article>
+        <article class="route">
+          <p class="route-type">Explore / Modify</p>
+          <div class="route-main"><h3>Run the Arduino demo.</h3><p>Study the dashboard, actions menu, motion response and four-way rotation. Build instructions are included for the Cardputer ADV.</p></div>
+          <a class="route-link" href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/tree/main/demo/CardputerADV_WeActDemo">Demo source <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+        </article>
+        <article class="route route-caution">
+          <p class="route-type">Install / Flash</p>
+          <div class="route-main"><h3>Use the factory image.</h3><p>The release includes a complete 8 MiB image for the verified pairing. <strong>Flashing at 0x0 overwrites the Cardputer's entire flash, including settings.</strong> Read the procedure first.</p></div>
+          <a class="route-link" href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/FLASH.md">Flash guide <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section demo-section" id="demo" aria-labelledby="demo-title">
+      <div class="wrap">
+        <div class="demo-topline">
+          <div><h2 id="demo-title">A display that reacts.</h2><p>The Cardputer's motion sensor and measured frame timings feed a fluid visual. Its shape, color and speed change as you move the device.</p></div>
+          <a class="text-link" href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/QUICKSTART.md">Controls &amp; quick start <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+        </div>
+        <div class="demo-stage">
+          <div class="video-shell">
+            <video controls preload="metadata" playsinline poster="media/cardputer-weact-setup.jpg" aria-label="Nine-second demonstration of the WeAct USB display animation">
+              <source src="media/cardputer-weact-animation.mp4" type="video/mp4">
+              Your browser cannot play this clip. <a href="media/cardputer-weact-animation.mp4">Open the MP4 directly.</a>
+            </video>
+            <div class="video-foot"><span>Real-device footage</span><span>09 sec / silent / H.264</span></div>
+          </div>
+          <div class="demo-notes">
+            <div class="note-group"><h3>Control it from the Cardputer.</h3><p><kbd>Tab</kbd> changes pages. <kbd>↑</kbd> and <kbd>↓</kbd> adjust brightness or select actions. <kbd>Enter</kbd> pauses, resumes or runs a command.</p></div>
+            <div class="note-group"><h3>Rotate the WeAct panel four ways.</h3><p>Landscape, portrait, reverse landscape and reverse portrait. The animation keeps its proportions when the panel turns.</p></div>
+            <p class="truth-note">Animation changes are artistic effects, not a CPU-load meter. The microphone is unused.</p>
+          </div>
+        </div>
+        <div class="gallery-intro"><h3>Three screens. One small keyboard.</h3><p>Dashboard, Actions and Info are available on the Cardputer's built-in TFT.</p></div>
+        <div class="screen-gallery">
+          <figure><img src="media/cardputer-dashboard.jpg" width="1440" height="1080" loading="lazy" alt="Cardputer dashboard showing animation status, brightness and USB transfer timing"><figcaption><strong>Dashboard</strong><span>Status, timing, brightness</span></figcaption></figure>
+          <figure><img src="media/cardputer-actions.jpg" width="1440" height="1080" loading="lazy" alt="Cardputer actions menu for display and animation controls"><figcaption><strong>Actions</strong><span>Rotate, pause, dim, power</span></figcaption></figure>
+          <figure><img src="media/cardputer-info.jpg" width="1440" height="1080" loading="lazy" alt="Cardputer info screen showing USB display connection and firmware status"><figcaption><strong>Info</strong><span>Connection and firmware state</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hardware-section wrap" id="hardware" aria-labelledby="hardware-title">
+      <div class="hardware-copy">
+        <h2 id="hardware-title">A specific hardware pairing.</h2>
+        <p>This project has been exercised on one host and one external panel. Use these details to check your setup before building or flashing.</p>
+        <a class="text-link" href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/HARDWARE.md">Compatibility details <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+      </div>
+      <div class="hardware-table-wrap">
+        <dl class="hardware-table">
+          <div><dt>Host</dt><dd>M5Stack Cardputer ADV <span>ESP32-S3 / 8 MiB flash</span></dd></div>
+          <div><dt>Panel</dt><dd>WeAct Display FS V1 <span>0.96-inch USB-C</span></dd></div>
+          <div><dt>Interface</dt><dd>USB CDC <span>Observed VID:PID 1A86:FE0C</span></dd></div>
+          <div><dt>Pixels</dt><dd>RGB565 <span>160 × 80 / 80 × 160</span></dd></div>
+          <div><dt>Observed firmware</dt><dd>V1.0.0.0</dd></div>
+        </dl>
+        <p class="hardware-limit"><strong>Scope:</strong> Other Cardputer models, larger panels and other WeAct firmware revisions have not been validated.</p>
+      </div>
+    </section>
+
+    <section class="section docs-section" id="docs" aria-labelledby="docs-title">
+      <div class="wrap docs-layout">
+        <div>
+          <h2 id="docs-title">Keep building from the source.</h2>
+          <p>Documentation and licenses stay in the repository, alongside the exact source and binary artifacts.</p>
+          <a class="button button-outline" href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display">Open the repository <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+        </div>
+        <nav class="doc-links" aria-label="Project documentation">
+          <a href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/QUICKSTART.md">Quick start <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+          <a href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/BUILD.md">Build guide <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+          <a href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/FLASH.md">Flash guide <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+          <a href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/LIBRARY_API.md">Library API <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+          <a href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/PROTOCOL.md">Display protocol <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+          <a href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/TROUBLESHOOTING.md">Troubleshooting <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-main">
+      <div class="footer-brand"><strong>Cardputer ADV × WeAct USB Display</strong><p>An independent open-source hardware project, unaffiliated with M5Stack or WeAct Studio.</p></div>
+      <div class="footer-legal"><p>Original project source and documentation: <a href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/LICENSE">MIT</a>. The firmware contains separately licensed components, including LGPL-covered code.</p><a href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/THIRD_PARTY_NOTICES.md">Third-party notices</a></div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>Project source: <a href="https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display">GitHub</a></span>
+      <nav class="machine-links" aria-label="Machine-readable project files"><span>Machine-readable</span><a href="llms.txt">llms.txt</a><a href="raw-manifest.json">manifest</a><a href="sitemap.xml">sitemap</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

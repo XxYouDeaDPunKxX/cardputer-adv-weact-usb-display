@@ -1,0 +1,43 @@
+# Cardputer ADV + WeAct USB Display
+
+> Open-source C++ library, Arduino demo, and factory firmware for controlling a WeAct Display FS V1 0.96-inch USB-C panel from an M5Stack Cardputer ADV.
+
+Canonical page (planned GitHub Pages project URL):
+https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/
+
+Repository:
+https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display
+
+## Main entry points
+
+- C++ display library: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/tree/main/library/WeActUSBDisplay
+- Library API: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/LIBRARY_API.md
+- Arduino demo: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/tree/main/demo/CardputerADV_WeActDemo
+- Quick start: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/QUICKSTART.md
+- Build instructions: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/BUILD.md
+- Firmware and manifest: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/tree/main/firmware
+- Flash procedure: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/FLASH.md
+- Supported hardware: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/HARDWARE.md
+- Protocol notes: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/PROTOCOL.md
+- Troubleshooting: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/TROUBLESHOOTING.md
+- Validation record: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/VALIDATION.md
+
+## Verified scope and cautions
+
+- Host: M5Stack Cardputer ADV, ESP32-S3, 8 MiB flash.
+- Panel: WeAct Display FS V1 0.96-inch USB-C, observed firmware V1.0.0.0.
+- Protocol: USB CDC; observed VID:PID 1A86:FE0C.
+- Pixels: RGB565; 160x80 landscape and 80x160 portrait.
+- The project has not validated other Cardputer models, larger WeAct panels, or other panel firmware revisions.
+- Flashing the complete factory image at address 0x0 overwrites the entire 8 MiB flash, including settings. Read the flash guide first.
+- Motion and timing measurements influence artistic animation; this is not a CPU-load visualization.
+
+## Source and license boundaries
+
+Original project code and documentation use MIT. The distributed firmware includes separately licensed components, including LGPL-covered Arduino-ESP32 code. Consult:
+
+- MIT: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/LICENSE
+- Third-party notices: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/THIRD_PARTY_NOTICES.md
+- Corresponding source: https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/sources/README.md
+
+This is an independent project, unaffiliated with M5Stack or WeAct Studio. The repository is authoritative for code, hashes, build procedure, and validation details.

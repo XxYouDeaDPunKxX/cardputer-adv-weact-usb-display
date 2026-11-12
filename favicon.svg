@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cardputer and external display">
+  <rect width="64" height="64" rx="12" fill="#0b1215"/>
+  <rect x="7" y="18" width="34" height="29" rx="4" fill="none" stroke="#b9eeae" stroke-width="3"/>
+  <rect x="12" y="23" width="24" height="12" rx="1" fill="#9de0e9"/>
+  <path d="M15 40h18" stroke="#b9eeae" stroke-width="2" stroke-dasharray="3 3"/>
+  <path d="M41 33h6" stroke="#b9eeae" stroke-width="3" stroke-linecap="round"/>
+  <rect x="47" y="26" width="12" height="14" rx="2" fill="#b9eeae"/>
+</svg>

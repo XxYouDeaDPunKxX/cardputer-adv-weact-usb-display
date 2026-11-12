@@ -1,0 +1,6 @@
+# Project-level discovery companion only.
+# Authoritative robots control for this host, if any, is at https://XxYouDeaDPunKxX.github.io/robots.txt.
+User-agent: *
+Allow: /
+
+Sitemap: https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/sitemap.xml

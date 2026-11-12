@@ -1,0 +1,60 @@
+{
+  "format_version": "1.0",
+  "kind": "software-source-code",
+  "name": "Cardputer ADV + WeAct USB Display",
+  "description": "C++ USB display library, Arduino demo, and factory firmware for the M5Stack Cardputer ADV and WeAct Display FS V1 0.96-inch panel.",
+  "version": "0.1.0",
+  "publication": {
+    "type": "github-pages-project-site",
+    "site_root": "https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/",
+    "domain_root": "https://XxYouDeaDPunKxX.github.io/",
+    "discovery_root": "https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/",
+    "canonical_html": [
+      "https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/"
+    ]
+  },
+  "discovery": {
+    "llms_txt": "https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/llms.txt",
+    "raw_manifest": "https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/raw-manifest.json",
+    "sitemap": "https://XxYouDeaDPunKxX.github.io/cardputer-adv-weact-usb-display/sitemap.xml"
+  },
+  "repository": {
+    "url": "https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display",
+    "source_branch": "main",
+    "license_for_original_code": "MIT",
+    "third_party_notices": "https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/THIRD_PARTY_NOTICES.md"
+  },
+  "hardware": {
+    "host": "M5Stack Cardputer ADV",
+    "host_chip": "ESP32-S3",
+    "host_flash_bytes": 8388608,
+    "panel": "WeAct Display FS V1 0.96-inch",
+    "panel_firmware_observed": "V1.0.0.0",
+    "interface": "USB CDC",
+    "usb_vid_pid_observed": "1A86:FE0C",
+    "pixel_format": "RGB565",
+    "landscape_pixels": [160, 80],
+    "portrait_pixels": [80, 160]
+  },
+  "entry_points": [
+    {
+      "name": "C++ library",
+      "url": "https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/tree/main/library/WeActUSBDisplay"
+    },
+    {
+      "name": "Arduino demo",
+      "url": "https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/tree/main/demo/CardputerADV_WeActDemo"
+    },
+    {
+      "name": "Firmware",
+      "url": "https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/tree/main/firmware",
+      "warning": "The complete factory image overwrites the entire 8 MiB flash when written at address 0x0.",
+      "instructions": "https://github.com/XxYouDeaDPunKxX/cardputer-adv-weact-usb-display/blob/main/docs/FLASH.md"
+    }
+  ],
+  "limits": [
+    "Other Cardputer models, larger WeAct panels, and other panel firmware revisions are not validated.",
+    "Animation is artistic and does not measure CPU load.",
+    "Partial fills, FastLZ, and the Free command require further physical validation."
+  ]
+}
