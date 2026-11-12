@@ -1,0 +1,31 @@
+{
+  "version": "0.1.0",
+  "build_id": "0.1.0+app.3fc42e699622",
+  "source_revision_sha256": "7303787379ba2562078de0639ed027eefec115fcf59463b7ae36772605b833ce",
+  "board": "M5Stack Cardputer ADV / ESP32-S3 / 8 MiB",
+  "factory_flash_offset": "0x0",
+  "app_flash_offset": "0x10000",
+  "nvs": {
+    "offset": "0x9000",
+    "size": "0x4000",
+    "state": "erased FF"
+  },
+  "artifacts": {
+    "CardputerADV_WeActDemo.factory-8MB.bin": {
+      "bytes": 8388608,
+      "sha256": "57ac558e6273fa61b8978fdfe1dddc1d0f2be2851341f61270c861a18923c8dc"
+    },
+    "CardputerADV_WeActDemo.app.bin": {
+      "bytes": 705312,
+      "sha256": "3fc42e699622ad5a50e2d496f3e10e12a93f2e8823f63aeec0ca00e1b6de1640"
+    },
+    "CardputerADV_WeActDemo.bootloader.bin": {
+      "bytes": 20224,
+      "sha256": "643a37f935e12aefc7b265c2de821444b1b92310cb84d3e523b13871d3ed88d6"
+    },
+    "CardputerADV_WeActDemo.partitions.bin": {
+      "bytes": 3072,
+      "sha256": "adcee3368b6608944e19b095d8abae5bdc1b1fd87f7c1e8902f18faadbb7faf8"
+    }
+  }
+}

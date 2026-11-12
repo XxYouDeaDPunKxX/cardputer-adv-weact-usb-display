@@ -1,0 +1,6 @@
+# Preserve exact release/source bytes across Git platforms.
+# In particular, partitions.csv and upstream license notices include CRLF.
+* -text
+*.bin binary
+*.zip binary
+*.exe binary

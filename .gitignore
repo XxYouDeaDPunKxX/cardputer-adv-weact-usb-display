@@ -1,0 +1,15 @@
+# Generated output, not project source.
+dist/
+.build/
+build/
+*.exe
+*.obj
+*.o
+*.pyc
+__pycache__/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Keep the verified factory image under firmware/ tracked.

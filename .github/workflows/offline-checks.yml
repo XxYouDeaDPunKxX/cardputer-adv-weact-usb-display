@@ -1,0 +1,48 @@
+name: Offline checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - name: Install pinned ESP32 board core and libraries
+        run: |
+          arduino-cli core update-index --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli core install esp32:esp32@3.3.2 --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli lib install EspUsbHost@2.10.1
+          arduino-cli lib install M5Cardputer@1.1.1
+          arduino-cli lib install M5Unified@0.2.17
+          arduino-cli lib install M5GFX@0.2.23
+      - name: Verify firmware layout and SHA-256 digests
+        run: python3 tools/verify_release.py
+      - name: Compile and run native regression tests
+        run: python3 tools/run_native_tests.py
+      - name: Compile Cardputer ADV demo
+        run: |
+          arduino-cli compile \
+            --fqbn 'esp32:esp32:m5stack_cardputer:USBMode=hwcdc,CDCOnBoot=cdc,FlashSize=8M,PartitionScheme=custom,PSRAM=disabled' \
+            --library library/WeActUSBDisplay \
+            --build-property "compiler.c.extra_flags=-ffile-prefix-map=${HOME}=/source" \
+            --build-property "compiler.cpp.extra_flags=-ffile-prefix-map=${HOME}=/source" \
+            --build-path .build/ci-demo-cache --output-dir .build/ci-demo-output \
+            demo/CardputerADV_WeActDemo
+      - name: Verify compiled firmware matches the supplied executable
+        run: python3 tools/verify_build_match.py .build/ci-demo-output/CardputerADV_WeActDemo.ino.bin
+      - name: Compile independent ColorCycle example
+        run: |
+          arduino-cli compile \
+            --fqbn 'esp32:esp32:m5stack_cardputer:USBMode=hwcdc,CDCOnBoot=cdc,FlashSize=8M,PSRAM=disabled' \
+            --library library/WeActUSBDisplay \
+            --build-path .build/ci-color-cache --output-dir .build/ci-color-output \
+            library/WeActUSBDisplay/examples/ColorCycle
+      - name: Build and check the three preview archives
+        run: python3 tools/package_release.py
