@@ -61,6 +61,10 @@ The demo uses Arduino-ESP32 3.3.2, EspUsbHost 2.10.1, and M5Stack libraries. The
 
 The demo has been flashed and operated successfully on a Cardputer ADV with the WeAct panel. The [firmware manifest](firmware/manifest.json) records the distributed image's SHA-256 hashes; the [validation record](docs/VALIDATION.md) lists the hardware and software checks.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for reporting issues, preparing changes, and documenting tests.
+
 ## 🤖 AI-assisted development
 
 This project was developed with AI assistance.
