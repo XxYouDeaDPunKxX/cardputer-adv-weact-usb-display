@@ -15,11 +15,13 @@ The Cardputer's built-in TFT opens on **Dashboard**. Press `TAB` to move between
 | Key | On Dashboard / Info | On Actions |
 | --- | --- | --- |
 | `TAB` | Change page | Change page |
-| `UP` / `DOWN` | Brightness ±10% | Move through commands |
+| `UP` / `DOWN` | Adjust brightness | Move through commands |
 | `ENTER` | Pause or resume | Execute the selected command |
 | Printable key | Pulse the animation (Dashboard only) | — |
 
 **Actions** has five commands: pause/resume animation, rotate, brightness +10%, brightness −10%, and screen on/off. Select one with `UP`/`DOWN`, then press `ENTER`.
+
+Brightness moves in 10-point steps from 20% to 100%; `DOWN` at 20% does nothing. `SCREEN > OFF` sets the backlight to 0% without powering down the panel. `SCREEN > ON` (or `UP` while off) restores the previous level.
 
 `ROTATE` cycles **landscape → portrait → reverse landscape → reverse portrait**. Colored corner markers briefly show the direction. The fluid keeps its proportions in portrait; reversed orientations use the panel's hardware rotation.
 

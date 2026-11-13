@@ -25,7 +25,7 @@ The Cardputer's built-in TFT has three pages: **Dashboard**, **Actions**, and **
 | Key | Dashboard / Info | Actions |
 | --- | --- | --- |
 | `TAB` | Switch page | Switch page |
-| `UP` / `DOWN` | Change brightness by 10% | Select a command |
+| `UP` / `DOWN` | Adjust brightness | Select a command |
 | `ENTER` | Pause or resume the animation | Run the selected command |
 | Other printable key | Trigger a pulse on Dashboard | — |
 
@@ -51,7 +51,7 @@ You need an **M5Stack Cardputer ADV** (ESP32-S3, 8 MiB flash), a **WeAct Display
 
 The observed panel uses USB CDC, VID:PID `1A86:FE0C`, firmware `V1.0.0.0`, and RGB565 pixels. It supports **160×80** landscape and **80×160** portrait, including reversed orientations.
 
-The library supports orientation, brightness, screen power, solid-color fills, and rectangular pixel drawing. Partial solid fills, FastLZ, and the `Free` command still need physical validation. See [hardware compatibility](docs/HARDWARE.md) and [protocol details](docs/PROTOCOL.md).
+The library supports orientation, brightness, backlight on/off, solid-color fills, and rectangular pixel drawing. Partial solid fills, FastLZ, and the `Free` command still need physical validation. See [hardware compatibility](docs/HARDWARE.md) and [protocol details](docs/PROTOCOL.md).
 
 ## 🛠️ Build and verify
 

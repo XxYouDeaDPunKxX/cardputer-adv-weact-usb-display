@@ -32,7 +32,7 @@ The `firmware/manifest.json` file records the hashes of the distributed binaries
 
 The board profile is `esp32:esp32:m5stack_cardputer` with `USBMode=hwcdc`, `CDCOnBoot=cdc`, `FlashSize=8M`, `PartitionScheme=custom`, and `PSRAM=disabled`. The custom `partitions.csv` is beside the sketch.
 
-You can also open the sketch in Arduino IDE after installing the board core and libraries.
+For Arduino IDE, copy `library/WeActUSBDisplay` into your sketchbook's `libraries/` directory, then open `demo/CardputerADV_WeActDemo/CardputerADV_WeActDemo.ino`. The build script already supplies the local library via `--library`.
 
 ## Rebuilding with a modified Arduino core
 

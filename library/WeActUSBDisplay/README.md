@@ -4,7 +4,7 @@ C++ driver for the WeAct Studio Display FS V1 0.96-inch USB-C panel (observed fi
 
 ## Get started
 
-Install this `WeActUSBDisplay` folder as an Arduino library. For an ESP32-S3 project, install Arduino-ESP32 3.3.2 and EspUsbHost 2.10.1, then open `examples/ColorCycle/ColorCycle.ino`. The example connects to the panel over USB CDC and alternates the screen color. It does not require the Cardputer demo or M5Cardputer library.
+Install this `WeActUSBDisplay` folder as an Arduino library. For an ESP32-S3 project, install Arduino-ESP32 3.3.2 and EspUsbHost 2.10.1, then open `examples/ColorCycle/ColorCycle.ino`. The example uses USB CDC to issue alternating blue/green `fillScreen()` commands. It does not require the Cardputer demo or M5Cardputer library.
 
 If you use a different transport, implement `open`, `connected`, `write`, `flush`, `readExact`, and `close` from `weact::ByteTransport`. The `flush(expectedBytes)` method must confirm the bytes were actually transferred. Create a `weact::Driver` with your transport and call `connect()` after the USB CDC interface becomes available.
 

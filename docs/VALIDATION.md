@@ -19,7 +19,7 @@ The firmware package targets the M5Stack Cardputer ADV (ESP32-S3, 8 MiB flash) a
 | Rebuild consistency | The source revision and distributed firmware hashes are recorded separately. Builds on different machines can embed different source paths and compilation timestamps, so identical binary bytes are not claimed. |
 | Modified LGPL core rebuild | On 2026-11-12, a clean build of the demo with a modified `esp32-hal-misc.c` from an isolated Arduino-ESP32 3.3.2 copy completed; compiler marker and linker map confirm that the modified core was compiled and linked |
 
-The checks can be run with `python tools/run_native_tests.py` and `python tools/verify_release.py`. CI compiles the Cardputer demo and independent `ColorCycle` example, runs the native tests, and verifies the supplied firmware and ZIP packages. The packaged factory image remains separate from freshly compiled output.
+From the repository, run both `python tools/run_native_tests.py` and `python tools/verify_release.py`. The demo-source ZIP supports the first command; the firmware ZIP supports the second. CI compiles the Cardputer demo and independent `ColorCycle` example, runs the native tests, and verifies the supplied firmware and ZIP packages. The packaged factory image remains separate from freshly compiled output.
 
 ## Hardware test scope
 
